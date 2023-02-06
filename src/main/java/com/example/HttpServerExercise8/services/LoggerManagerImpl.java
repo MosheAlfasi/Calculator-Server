@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 public class LoggerManagerImpl implements LoggerManager {
+
     @Override
     public String getLoggerLevel(String loggerName) throws LoggerException {
         try {

@@ -19,6 +19,7 @@ import org.springframework.stereotype.Component;
 @ConditionalOnExpression("${aspect.enabled:true}")
 @RequiredArgsConstructor
 public class ControllerAspect {
+
     private final Counter requestCounter;
     private final Logger logger = LogManager.getLogger("request-logger");
 

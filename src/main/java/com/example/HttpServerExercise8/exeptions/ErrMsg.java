@@ -14,8 +14,8 @@ public enum ErrMsg {
     INVALID_LOGGER_LEVEL("Error: logger level %s is invalid."),
     ERROR_LOGGER_REQUEST("Error: %s");
 
+    private final String msg;
 
-    private String msg;
     ErrMsg(String msg) {
         this.msg = msg;
     }

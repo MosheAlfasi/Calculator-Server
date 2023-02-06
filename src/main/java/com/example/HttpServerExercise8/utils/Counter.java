@@ -16,6 +16,6 @@ public class Counter {
     }
 
     public void incrementBy1() {
-        counter++;
+        ++counter;
     }
 }

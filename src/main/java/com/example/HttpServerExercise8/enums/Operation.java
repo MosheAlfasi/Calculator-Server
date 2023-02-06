@@ -4,15 +4,15 @@ import lombok.Getter;
 
 @Getter
 public enum Operation {
-    plus(2),
-    minus(2),
-    times(2),
-    divide(2),
-    pow(2),
-    abs(1),
-    fact(1);
+    PLUS(2),
+    MINUS(2),
+    TIMES(2),
+    DIVIDE(2),
+    POW(2),
+    ABS(1),
+    FACT(1);
 
-    private int argumentAmount;
+    private final int argumentAmount;
 
     Operation(int argumentAmount) {
         this.argumentAmount = argumentAmount;

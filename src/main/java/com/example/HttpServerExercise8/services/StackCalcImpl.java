@@ -18,6 +18,7 @@ import java.util.stream.Collectors;
 @Service
 @RequiredArgsConstructor
 public class StackCalcImpl implements StackCalc{
+
     private final Logger logger = LogManager.getLogger("stack-logger");
     private final Calculator calculator;
     private final Stack<Integer> stack = new Stack<>();

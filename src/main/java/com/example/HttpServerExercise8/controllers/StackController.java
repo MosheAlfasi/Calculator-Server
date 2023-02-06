@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("stack")
 @RequiredArgsConstructor
 public class StackController {
+
     private final StackCalc stackCalc;
 
     @GetMapping("/size")
@@ -22,7 +23,7 @@ public class StackController {
     public SuccessResponse getStackSize() {
         int result = stackCalc.getStackSize(true);
 
-        return new SuccessResponse(result);
+        return new SuccessResponse(String.valueOf(result));
     }
 
     @PutMapping("/arguments")
@@ -31,7 +32,7 @@ public class StackController {
     public SuccessResponse addArguments(@RequestBody StackAddArgsBody body) {
         stackCalc.addArguments(body.getArguments());
 
-        return new SuccessResponse(stackCalc.getStackSize(false));
+        return new SuccessResponse(String.valueOf(stackCalc.getStackSize(false)));
     }
 
     @GetMapping("/operate")
@@ -40,7 +41,7 @@ public class StackController {
     public SuccessResponse performOperation(@RequestParam String operation) throws CalculateException {
         int result = stackCalc.performOperation(operation);
 
-        return new SuccessResponse(result);
+        return new SuccessResponse(String.valueOf(result));
     }
 
     @DeleteMapping("/arguments")
@@ -49,6 +50,6 @@ public class StackController {
     public SuccessResponse removeArgs(@RequestParam String count) throws CalculateException {
         stackCalc.removeArguments(Integer.valueOf(count));
 
-        return new SuccessResponse(stackCalc.getStackSize(false));
+        return new SuccessResponse(String.valueOf(stackCalc.getStackSize(false)));
     }
 }

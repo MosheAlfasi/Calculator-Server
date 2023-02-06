@@ -19,25 +19,25 @@ public class CalculatorImpl implements Calculator {
         Operation operation = CalcValidator.validateReq(operationStr, arguments.size());
 
         switch (operation) {
-            case plus:
+            case PLUS:
                 res = plus(arguments.get(0), arguments.get(1));
                 break;
-            case minus:
+            case MINUS:
                 res = minus(arguments.get(0), arguments.get(1));
                 break;
-            case times:
+            case TIMES:
                 res = times(arguments.get(0), arguments.get(1));
                 break;
-            case divide:
+            case DIVIDE:
                 res = divide(arguments.get(0), arguments.get(1));
                 break;
-            case pow:
+            case POW:
                 res = pow(arguments.get(0), arguments.get(1));
                 break;
-            case abs:
+            case ABS:
                 res = abs(arguments.get(0));
                 break;
-            case fact:
+            case FACT:
                 res = fact(arguments.get(0));
                 break;
         }

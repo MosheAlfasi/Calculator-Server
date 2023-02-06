@@ -10,5 +10,5 @@ import lombok.NoArgsConstructor;
 @Data
 @Builder
 public class SuccessResponse {
-    int result;
+    String result;
 }

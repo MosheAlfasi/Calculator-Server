@@ -18,7 +18,7 @@ public class  CalcValidator {
 
     public static Operation validateOperation(String operationStr) throws CalculateException {
         try {
-            return Operation.valueOf(operationStr.toLowerCase());
+            return Operation.valueOf(operationStr.toUpperCase());
         } catch (IllegalArgumentException e) {
             throw new CalculateException(ErrMsg.NO_SUCH_OPERATION, operationStr);
         }

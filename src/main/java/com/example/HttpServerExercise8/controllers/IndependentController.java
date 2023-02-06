@@ -17,6 +17,7 @@ import java.util.stream.Collectors;
 @RequestMapping("independent")
 @RequiredArgsConstructor
 public class IndependentController {
+
     private final IndependentCalc independentCalc;
 
     @PostMapping("/calculate")
@@ -25,6 +26,6 @@ public class IndependentController {
     public SuccessResponse calculate (@RequestBody IndependentBody body) throws CalculateException {
         int result = independentCalc.performOperation(body.getArguments(), body.getOperation());
 
-        return new SuccessResponse(result);
+        return new SuccessResponse(String.valueOf(result));
     }
 }
